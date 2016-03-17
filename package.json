@@ -9,6 +9,8 @@
   "author": "taylor",
   "license": "ISC",
   "dependencies": {
-    "react": "^0.14.7"
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-mounter": "^1.1.0"
   }
 }
