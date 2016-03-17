@@ -1,9 +1,7 @@
 import React from 'react';
 
-var MainLayout = ({ content }) => (
+export const MainLayout = ({ content }) => (
 		<div className='main-layout'>
 			{ content }
 		</div>
 )
-
-export { MainLayout };
