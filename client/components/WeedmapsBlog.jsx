@@ -3,9 +3,7 @@ import AddPostForm from './AddPostForm.jsx';
 import BlogSingle from './BlogSingle.jsx';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
-
 Posts = new Meteor.Collection('posts');
-
 
 export default class WeedmapsBlog extends TrackerReact(Component) {
 

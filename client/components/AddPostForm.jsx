@@ -5,14 +5,12 @@ export default class AddPostForm extends Component {
 
 	addBlogPost(event) {
 		event.preventDefault();
-		var title = this.refs.title.value.trim();
-		var description = this.refs.description.value.trim();
-		var user;
-		Posts.insert({
-			title: title,
-			description: description,
-			createdAt: new Date()
-		});
+		options = {};
+		options['title'] = this.refs.title.value.trim();
+		options['description'] = this.refs.description.value.trim();
+		let user;
+		console.log(options);
+		Meteor.call('addPost', options);
 	}
 
 
