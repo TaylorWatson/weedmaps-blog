@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
-Posts = new Meteor.Collection('posts');
 
-export default class App extends React {
-
+export default class AddPostForm extends Component {
 
 	addBlogPost(event) {
 		event.preventDefault();
@@ -17,11 +15,11 @@ export default class App extends React {
 		});
 	}
 
+
 	render() {
-		return (
-			<div>
-				<h2>Weed Maps Blog</h2>
-				<form className='blog-form' onSubmit={this.addBlogPost.bind(this)}>
+
+		return(
+			<form className='blog-form' onSubmit={this.addBlogPost.bind(this)}>
 					<input
 					type='text'
 					ref='title'
@@ -33,8 +31,8 @@ export default class App extends React {
 					placeholder='description' />
 				<br />
 				<button value='submit'>Add Post</button>
-				</form>
-			</div>
+			</form>
 		)
 	}
+
 }
