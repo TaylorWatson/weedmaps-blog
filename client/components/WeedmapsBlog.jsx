@@ -7,6 +7,17 @@ Posts = new Meteor.Collection('posts');
 
 export default class WeedmapsBlog extends TrackerReact(Component) {
 
+	constructor() {
+		super();
+
+		this.state = {
+			subscription: {
+				posts: Meteor.subscribe("allPosts")
+			}
+		}
+	}
+
+
 	posts() {
 	return Posts.find().fetch();
 	}
