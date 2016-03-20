@@ -20,3 +20,6 @@ standard-minifier-js
 kadira:flow-router-ssr@3.12.1
 meteortoys:allthings
 ultimatejs:tracker-react@=1.0.0
+
+accounts-ui
+accounts-password

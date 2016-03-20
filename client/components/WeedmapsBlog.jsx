@@ -17,6 +17,10 @@ export default class WeedmapsBlog extends TrackerReact(Component) {
 		}
 	}
 
+	componentWillUnmount() {
+		this.state.subscription.posts.stop();
+	}
+
 
 	posts() {
 	return Posts.find().fetch();
@@ -25,7 +29,6 @@ export default class WeedmapsBlog extends TrackerReact(Component) {
 	render() {
 		return (
 			<div>
-				<h2>Weed Maps Blog</h2>
 				<AddPostForm />
 				{this.posts().map( (post) => {
 					return <BlogSingle post={post} />
