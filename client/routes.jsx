@@ -11,13 +11,3 @@ FlowRouter.route('/', {
 		})
 	}
 });
-
-FlowRouter.route('/blog/:id', {
-	action( function() {
-		return Meteor.userId().id;
-	}) {
-		mount( MainLayout, {
-			content: (<UserBlog id={ params.id } />)
-		})
-	}
-});
