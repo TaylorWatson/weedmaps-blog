@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AddPostForm from './AddPostForm.jsx';
 import BlogSingle from './BlogSingle.jsx';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
+import UserSingle from './UserSingle.jsx';
 
 Posts = new Meteor.Collection('posts');
 
@@ -9,30 +10,33 @@ export default class WeedmapsBlog extends TrackerReact(Component) {
 
 	constructor() {
 		super();
-
 		this.state = {
 			subscription: {
-				posts: Meteor.subscribe("allPosts")
+				allUsers: Meteor.subscribe("allUsers")
 			}
 		}
+
+	}
+
+	componentDidMount() {
+		console.log(Meteor.users.find());
 	}
 
 	componentWillUnmount() {
-		this.state.subscription.posts.stop();
+		this.state.subscription.allUsers.stop();
 	}
 
-
-	posts() {
-	return Posts.find().fetch();
+	users() {
+		return Meteor.users.find();
 	}
 
 	render() {
 		return (
 			<div>
-				<AddPostForm />
-				{this.posts().map( (post) => {
-					return <BlogSingle post={post} />
-				} )}
+			<br />
+				{ this.users().map(( user ) => {
+					return <UserSingle key={ user._id } user={ user } />
+				})}
 			</div>
 		)
 	}

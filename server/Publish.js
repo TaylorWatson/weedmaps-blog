@@ -8,3 +8,7 @@ Meteor.publish('allPosts', function() {
 Meteor.publish('userPosts', function() {
 	return Posts.find({ user: this.userId });
 });
+
+Meteor.publish('allUsers', function() {
+	return Meteor.users.find({}, {fields: {username: 1}})
+});
