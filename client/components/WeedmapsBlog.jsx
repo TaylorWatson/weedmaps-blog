@@ -23,6 +23,8 @@ export default class WeedmapsBlog extends TrackerReact(Component) {
 	}
 
 	componentWillUnmount() {
+		//bug with Tracker ... https://github.com/ultimatejs/tracker-react/issues/11
+		this._renderComputation.stop();
 		this.state.subscription.allUsers.stop();
 	}
 
