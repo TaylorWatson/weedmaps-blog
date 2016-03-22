@@ -3,6 +3,7 @@ import AddPostForm from './AddPostForm.jsx';
 import BlogSingle from './BlogSingle.jsx';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
+Posts = new Meteor.Collection('posts');
 
 export default class UserBlog extends TrackerReact(Component) {
 
@@ -22,7 +23,6 @@ export default class UserBlog extends TrackerReact(Component) {
 		this.state.subscription.posts.stop();
 
 	}
-
 
 	posts() {
 		return Posts.find({ username: this.props.username }).fetch();
