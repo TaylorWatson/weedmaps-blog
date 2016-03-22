@@ -1,13 +1,14 @@
 Meteor.methods({
-	addPost(title, description) {
+	addPost(post) {
 		if(!Meteor.userId()) {
 			throw new Meteor.Error('not logged in');
 		}
 		Posts.insert({
-			title: title,
-			description: description,
+			title: post.title,
+			description: post.description,
 			createdAt: new Date(),
-			user: Meteor.userId()
+			userId: Meteor.userId(),
+			username: Meteor.user().username
 		});
 	}
 

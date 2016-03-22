@@ -8,8 +8,8 @@ export default class BlogSingle extends Component {
 			<div>
 				<h2>{this.props.post.title}</h2>
 				<p>{this.props.post.description}</p>
-				<p>{this.props.post.createdAt.toString()}</p>
-				<p></p>
+				<p>{this.props.post.createdAt.toString().slice(4,15)}</p>
+				<p>{ this.props.post.username }</p>
 			</div>
 		)
 	}

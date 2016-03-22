@@ -5,11 +5,14 @@ export default class AddPostForm extends Component {
 
 	addBlogPost(event) {
 		event.preventDefault();
-		let title = this.refs.title.value.trim();
-		let description = this.refs.description.value.trim();
-		Meteor.call('addPost', title, description);
+		let params = {
+			title:this.refs.title.value.trim(),
+			description:this.refs.description.value.trim()};
+		Meteor.call('addPost', params, () => {
+			this.refs.title.value = "";
+			this.refs.description.value = "";
+		});
 	}
-
 
 	render() {
 

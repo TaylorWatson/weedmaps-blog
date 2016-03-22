@@ -36,8 +36,8 @@ export default class UserBlog extends TrackerReact(Component) {
 				<h1>Welcome to {this.props.username}'s blog!</h1>
 				<h3>Create a new post</h3>
 				<AddPostForm />
-				{this.posts().map( (post) => {
-					return <BlogSingle post={post} />
+				{this.posts().map( ( post ) => {
+					return <BlogSingle key= { post._id } post={ post } />
 				} )}
 			</div>
 		)
