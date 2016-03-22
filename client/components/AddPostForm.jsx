@@ -6,6 +6,16 @@ export default class AddPostForm extends Component {
 	constructor() {
 		super();
 
+		this.state = {
+			onSub: this.addPost.bind(this)
+		}
+	}
+
+	componentDidMount() {
+		if (this.props.name == 'Edit Post')
+		{
+			this.setState({ onSub: this.updatePost.bind(this)})
+		}
 	}
 
 	addPost(event) {
@@ -35,7 +45,7 @@ export default class AddPostForm extends Component {
 
 	render() {
 		return(
-			<form onSubmit={this.updatePost.bind(this)}>
+			<form onSubmit={ this.state.onSub }>
 				<input
 					type='text'
 					ref='title'
