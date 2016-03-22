@@ -7,7 +7,9 @@ export default class UserSingle extends Component {
 
 		return(
 			<li>
-			{ this.props.user.username }
+				<a href={`/user/${this.props.user.username}`}>
+					Checkout: { this.props.user.username }'s Blog!
+				</a>
 			</li>
 		)
 	}
