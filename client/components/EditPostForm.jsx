@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-export default class AddPostForm extends Component {
+export default class EditPostForm extends Component {
 
 	addBlogPost(event) {
 		event.preventDefault();
