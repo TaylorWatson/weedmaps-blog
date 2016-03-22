@@ -16,10 +16,6 @@ export default class WeedmapsBlog extends TrackerReact(Component) {
 
 	}
 
-	componentDidMount() {
-		console.log(Meteor.users.find());
-	}
-
 	componentWillUnmount() {
 		//bug with Tracker ... https://github.com/ultimatejs/tracker-react/issues/11
 		this._renderComputation.stop();

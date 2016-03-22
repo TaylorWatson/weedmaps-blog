@@ -13,7 +13,6 @@ export default class BlogSingle extends Component {
 	}
 
 	componentDidMount() {
-		console.log('blogsingle mounted');
 		if (Meteor.userId() != null && Meteor.user().username == this.props.post.username ) {
 			this.setState({ cudElements:
 				<div>
