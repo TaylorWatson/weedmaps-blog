@@ -5,7 +5,6 @@ export default class AddPostForm extends Component {
 
 	constructor() {
 		super();
-
 		this.state = {
 			onSub: this.addPost.bind(this)
 		}
