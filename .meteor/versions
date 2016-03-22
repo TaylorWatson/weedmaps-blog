@@ -98,6 +98,7 @@ spacebars-compiler@1.0.9-rc.2
 srp@1.0.6-rc.2
 standard-minifier-css@1.0.4-rc.2
 standard-minifier-js@1.0.4-rc.2
+stolinski:stylus-multi@1.4.3
 templating@1.1.7-rc.2
 templating-tools@1.0.2-rc.2
 tracker@1.0.11-rc.2
