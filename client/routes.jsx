@@ -20,3 +20,4 @@ FlowRouter.route('/user/:username', {
 		})
 	}
 });
+
