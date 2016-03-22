@@ -11,19 +11,21 @@ export default class UserBlog extends TrackerReact(Component) {
 
 		this.state = {
 			subscription: {
-				posts: Meteor.subscribe("userPosts")
+				posts: Meteor.subscribe("allPosts")
 			}
 		}
 	}
 
 	componentWillUnmount() {
+		//bug with Tracker ... https://github.com/ultimatejs/tracker-react/issues/11
+		this._renderComputation.stop();
 		this.state.subscription.posts.stop();
 
 	}
 
 
 	posts() {
-		return Posts.find().fetch();
+		return Posts.find({ username: this.props.username }).fetch();
 
 	}
 
@@ -31,6 +33,8 @@ export default class UserBlog extends TrackerReact(Component) {
 
 		return (
 			<div>
+				<h1>Welcome to {this.props.username}'s blog!</h1>
+				<h3>Create a new post</h3>
 				<AddPostForm />
 				{this.posts().map( (post) => {
 					return <BlogSingle post={post} />
