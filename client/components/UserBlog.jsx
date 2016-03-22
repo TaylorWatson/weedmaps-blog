@@ -18,7 +18,7 @@ export default class UserBlog extends TrackerReact(Component) {
 
 	componentDidMount() {
 		console.log(Meteor.user());
-		if (!Meteor.user && Meteor.user().username == this.props.username ) {
+		if (Meteor.userId() != null && Meteor.user().username == this.props.username ) {
 			this.setState({ createPost:
 				<div>
 					<h3>Create a new post</h3>

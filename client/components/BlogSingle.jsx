@@ -14,7 +14,7 @@ export default class BlogSingle extends Component {
 
 	componentDidMount() {
 		console.log('blogsingle mounted');
-		if (!Meteor.user && Meteor.user().username == this.props.post.username ) {
+		if (Meteor.userId() != null && Meteor.user().username == this.props.post.username ) {
 			this.setState({ cudElements:
 				<div>
 					<button onClick={ this.editHandle }>Edit Post</button>
