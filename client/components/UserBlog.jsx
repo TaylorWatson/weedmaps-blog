@@ -33,7 +33,7 @@ export default class UserBlog extends TrackerReact(Component) {
 	}
 
 	posts() {
-		return Posts.find({ username: this.props.username }).fetch();
+		return Posts.find({ username: this.props.username }).fetch().reverse();
 	}
 
 	render() {

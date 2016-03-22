@@ -13,7 +13,6 @@ export default class WeedmapsBlog extends TrackerReact(Component) {
 				allUsers: Meteor.subscribe("allUsers")
 			}
 		}
-
 	}
 
 	componentWillUnmount() {
@@ -29,6 +28,7 @@ export default class WeedmapsBlog extends TrackerReact(Component) {
 	render() {
 		return (
 			<div>
+			<h1 className='pageTitle'>Sign up to post!</h1>
 			<br />
 				{ this.users().map(( user ) => {
 					return <UserSingle key={ user._id } user={ user } />

@@ -10,6 +10,8 @@ export const MainLayout = ({ content }) => (
 					<AccountsUI />
 				</nav>
 			</header>
+			<main>
 			{ content }
+			</main>
 		</div>
 )
