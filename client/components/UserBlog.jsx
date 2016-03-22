@@ -21,21 +21,18 @@ export default class UserBlog extends TrackerReact(Component) {
 		//bug with Tracker ... https://github.com/ultimatejs/tracker-react/issues/11
 		this._renderComputation.stop();
 		this.state.subscription.posts.stop();
-
 	}
 
 	posts() {
 		return Posts.find({ username: this.props.username }).fetch();
-
 	}
 
 	render() {
-
 		return (
 			<div>
 				<h1>Welcome to {this.props.username}'s blog!</h1>
 				<h3>Create a new post</h3>
-				<AddPostForm />
+				<AddPostForm name='Add Post' />
 				{this.posts().map( ( post ) => {
 					return <BlogSingle key= { post._id } post={ post } />
 				} )}
