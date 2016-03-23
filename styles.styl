@@ -124,27 +124,38 @@ p
         lost-center 70%
         margin-top 40px
 
+.blogPage
+    padding 50px
+    input
+        width 90%
+        font-size 1em
+        font-weight 800
+        color #333
+        border none
+        padding 20px
+
 .btn, button
     display inline-block
     cursor pointer
-    background purp
+    background bright-blue
     color #FFF
     text-decoration none
     text-transform uppercase
     padding 5px 15px
-    border solid 3px purp
+    border solid 3px bright-blue
     border-radius 2px
+    margin 3px 10px 3px 0px
     font-weight 800
     shadow-level(1)
     trans()
     &:hover
         background @background - 20
         border-color @background
-        shadow-level(2)
+        shadow-level(4)
     &.btn-primary
         background teal
         border-color teal
-        color dark-purp
+        color blue
         &:hover
             background @background - 40
             border-color @background
@@ -155,9 +166,9 @@ p
             background @background - 20
             border-color @background
     &.btn-text
-        color purp
+        color blue
         background transparent
-        border solid 2px purp
+        border solid 2px blue
         shadow-level(0)
         &:hover
             background teal
@@ -194,13 +205,18 @@ p
             border-color @background
 
 input, select, textarea
-    color purp
+    color blue
     background #FFF
     border solid 2px light-grey
     border-radius 2px
     font-weight 800
+    display block
     padding 6px 10px
     margin-bottom 10px
+    &:hover
+        background @background - 1
+        border-color @background
+        shadow-level(4)
 
 input::-webkit-input-placeholder
     color: #ddd
@@ -211,29 +227,32 @@ input::-moz-placeholder
 input:-ms-input-placeholder
     color: #ddd
 
-.new-resolution
+.singlePost
     transition all 0.3s cubic-bezier(0.86, 0, 0.07, 1)
     shadow-level(3)
+    padding 10px
+    margin 10px 10px 10px 0
+    width 90%
     &:hover
         shadow-level(5)
-    label
-        background dark-purp
+    h2
         text-transform uppercase
         font-weight 800
-        color #FFF
-        font-size 1.2em
-        padding 10px
+        color black
+        font-size 2.2em
+        padding 0px
         display block
         text-align center
         letter-spacing 2px
     input
         width 100%
-        margin 0
-        font-size 2em
+        font-size 1em
         font-weight 800
         color #333
         border none
-        padding 30px
+        padding 20px
+    p
+        font-size 1.2em
 
 .resolutions
     list-style none

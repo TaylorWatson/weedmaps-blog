@@ -36,7 +36,7 @@ export default class UserBlog extends TrackerReact(Component) {
 
 	render() {
 		return (
-			<div>
+			<div className='blogPage'>
 				<h1>Welcome to {this.props.username}'s blog!</h1>
 				{ this.state.createPost }
 				{this.posts().map( ( post ) => {
