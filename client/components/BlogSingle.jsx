@@ -31,9 +31,17 @@ export default class BlogSingle extends Component {
 		event.preventDefault();
 		this.setState({ cudElements:
 			 <div>
-			 	<AddPostForm post={ this.props.post } name='Edit Post' />
+			 	<AddPostForm post={ this.props.post } click={ this.hasEdited.bind(this) } name='Edit Post' />
 			 </div>
 		})
+	}
+
+	hasEdited() {
+		this.setState({ cudElements:
+		<div>
+			<button onClick={ this.editHandle }>Edit Post</button>
+			<button onClick={ this.deletePost }>Delete Post</button>
+		</div>});
 	}
 
 	render() {
