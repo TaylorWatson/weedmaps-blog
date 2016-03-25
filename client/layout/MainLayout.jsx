@@ -4,9 +4,8 @@ import AccountsUI from '../components/AccountsUI.jsx';
 export const MainLayout = ({ content }) => (
 		<div className='main-layout'>
 			<header>
-				<h2>Weedmaps Blog</h2>
+				<a href="/"><h2>Weedmaps Blog</h2></a>
 				<nav>
-					<a href="/">Home </a>
 					<AccountsUI />
 				</nav>
 			</header>
