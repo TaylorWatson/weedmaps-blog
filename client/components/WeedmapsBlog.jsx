@@ -3,6 +3,7 @@ import AddPostForm from './AddPostForm.jsx';
 import BlogSingle from './BlogSingle.jsx';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 import UserSingle from './UserSingle.jsx';
+import AutoComplete from 'material-ui/lib/auto-complete';
 
 export default class WeedmapsBlog extends TrackerReact(Component) {
 
@@ -14,6 +15,7 @@ export default class WeedmapsBlog extends TrackerReact(Component) {
 			}
 		}
 	}
+
 
 	componentWillUnmount() {
 		//bug with Tracker ... https://github.com/ultimatejs/tracker-react/issues/11
@@ -27,8 +29,9 @@ export default class WeedmapsBlog extends TrackerReact(Component) {
 
 	render() {
 		return (
-			<div>
-			<h1 className='pageTitle'>Sign up to post!</h1>
+			<div className='homePageContent'>
+			<h1 className='pageTitle'>Search for friend or see latest</h1>
+
 			<br />
 				{ this.users().map(( user ) => {
 					return <UserSingle key={ user._id } user={ user } />
