@@ -108,6 +108,19 @@ header
             &:hover
                 border-color teal
 
+a
+    color: Black
+    text-decoration: none
+    line-height: 20px
+    font-size: 1em
+    display: inline-block
+    border-bottom 4px solid transparent
+    trans()
+    + a
+        margin-left: 30px
+    &:hover
+        border-color bright-blue
+
 
 p
     color #333
@@ -143,15 +156,16 @@ p
     text-transform uppercase
     padding 5px 15px
     border solid 3px bright-blue
-    border-radius 2px
+    border-radius 6px
     margin 3px 10px 3px 0px
-    font-weight 800
+    width 90%
+    font-weight 400
     shadow-level(1)
     trans()
     &:hover
         background @background - 20
         border-color @background
-        shadow-level(4)
+        shadow-level(2)
     &.btn-primary
         background teal
         border-color teal
@@ -216,7 +230,7 @@ input, select, textarea
     &:hover
         background @background - 1
         border-color @background
-        shadow-level(4)
+        shadow-level(2)
 
 input::-webkit-input-placeholder
     color: #ddd
@@ -229,21 +243,19 @@ input:-ms-input-placeholder
 
 .singlePost
     transition all 0.3s cubic-bezier(0.86, 0, 0.07, 1)
-    shadow-level(3)
-    padding 10px
-    margin 10px 10px 10px 0
+    shadow-level(1)
+    padding 30px
+    margin 30px 0px 0px 0
     width 90%
     &:hover
-        shadow-level(5)
+        shadow-level(2)
     h2
-        text-transform uppercase
-        font-weight 800
-        color black
+        font-weight 600
+        color bright-blue
         font-size 2.2em
-        padding 0px
         display block
         text-align center
-        letter-spacing 2px
+        letter-spacing 1px
     input
         width 100%
         font-size 1em
@@ -253,6 +265,21 @@ input:-ms-input-placeholder
         padding 20px
     p
         font-size 1.2em
+    .btn, button
+        display inline-block
+        cursor pointer
+        background bright-blue
+        color #FFF
+        text-decoration none
+        text-transform uppercase
+        padding 5px 15px
+        border solid 3px bright-blue
+        border-radius 6px
+        margin 3px 10px 3px 0px
+        width 48%
+        font-weight 400
+        shadow-level(1)
+        trans()
 
 .resolutions
     list-style none
